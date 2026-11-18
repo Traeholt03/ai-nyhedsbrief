@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Navnet launchd kender opgaven under -->
+    <key>Label</key>
+    <string>dk.eksempel.ai-nyhedsbrief</string>
+
+    <!-- HVAD: programmet og dets argumenter (fulde stier; launchd kender ikke ~) -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/STI/TIL/ai-nyhedsbrief/.venv/bin/python</string>
+        <string>/STI/TIL/ai-nyhedsbrief/nyheder.py</string>
+    </array>
+
+    <!-- HVORNÅR: hver dag kl. 07:00 -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>7</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- HVOR: almindeligt output og fejl skrives til logfiler -->
+    <key>StandardOutPath</key>
+    <string>/STI/TIL/ai-nyhedsbrief/log/nyheder.log</string>
+    <key>StandardErrorPath</key>
+    <string>/STI/TIL/ai-nyhedsbrief/log/fejl.log</string>
+</dict>
+</plist>
